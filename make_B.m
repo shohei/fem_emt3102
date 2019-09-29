@@ -1,4 +1,4 @@
-function B=make_B(ELEMENTS,cnnc,x,y)
+function [B,S] = make_B(ELEMENTS,cnnc,x,y)
 
 for e=1:ELEMENTS
  x1 = x(cnnc(e,1)); y1 = y(cnnc(e,1));
@@ -7,24 +7,24 @@ for e=1:ELEMENTS
  S = (x1*y2-x1*y3+x2*y3-x2*y1+x3*y1-x3*y2)/2;
  coef = 1/S/2;
  
- B(e,1,1) = coef*(y2-y3);
- B(e,1,2) = 0;
- B(e,1,3) = coef*(y3-y1);
- B(e,1,4) = 0;
- B(e,1,5) = coef*(y1-y2);
- B(e,1,6) = 0;
- B(e,2,1) = 0;
- B(e,2,2) = coef*(x3-x2);
- B(e,2,3) = 0;
- B(e,2,4) = coef*(x1-x3);
- B(e,2,5) = 0;
- B(e,2,6) = coef*(x2-x1);
- B(e,3,1) = B(e,2,2);
- B(e,3,2) = B(e,1,1);
- B(e,3,3) = B(e,2,4);
- B(e,3,4) = B(e,1,3);
- B(e,3,5) = B(e,2,6);
- B(e,3,6) = B(e,1,5);
+ B(1,1,e) = coef*(y2-y3);
+ B(1,2,e) = 0;
+ B(1,3,e) = coef*(y3-y1);
+ B(1,4,e) = 0;
+ B(1,5,e) = coef*(y1-y2);
+ B(1,6,e) = 0;
+ B(2,1,e) = 0;
+ B(2,2,e) = coef*(x3-x2);
+ B(2,3,e) = 0;
+ B(2,4,e) = coef*(x1-x3);
+ B(2,5,e) = 0;
+ B(2,6,e) = coef*(x2-x1);
+ B(3,1,e) = B(2,2,e);
+ B(3,2,e) = B(1,1,e);
+ B(3,3,e) = B(2,4,e);
+ B(3,4,e) = B(1,3,e);
+ B(3,5,e) = B(2,6,e);
+ B(3,6,e) = B(1,5,e);
 
 end
 
