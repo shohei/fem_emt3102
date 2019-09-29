@@ -10,7 +10,6 @@ K=make_K(Ke,ELEMENTS,DOF_TRIA3,DOF_NODE,cnnc,NODES);
 [Kc,F,U,Um]=set_BC(DOF_TOTAL,K);
 U=Kc\F;
 U
-%doSolve();A
 %make_reaction();
 %make_strain_element();
 %make_stress_element();
