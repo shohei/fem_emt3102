@@ -7,9 +7,8 @@ D = make_D(COMPONENTS,YOUNG,POISSON);
 [B,S] = make_B(ELEMENTS,cnnc,x,y);
 Ke=make_Ke(B,D,ELEMENTS,DOF_TRIA3,THICKNESS,S);
 K=make_K(Ke,ELEMENTS,DOF_TRIA3,DOF_NODE,cnnc,NODES);
-[Kc,F,U,Um] = set_BC(DOF_TOTAL,K);
-Kc
-U = Kc\F;
+[Kc,F,U,Um]=set_BC(DOF_TOTAL,K);
+U=Kc\F;
 U
 %doSolve();A
 %make_reaction();
