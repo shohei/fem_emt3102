@@ -7,11 +7,13 @@ D = make_D(COMPONENTS,YOUNG,POISSON);
 [B,S] = make_B(ELEMENTS,cnnc,x,y);
 Ke=make_Ke(B,D,ELEMENTS,DOF_TRIA3,THICKNESS,S);
 K=make_K(Ke,ELEMENTS,DOF_TRIA3,DOF_NODE,cnnc,NODES);
-K
-set_BC();
-doSolve();
-make_reaction();
-make_strain_element();
-make_stress_element();
+[Kc,F,U,Um] = set_BC(DOF_TOTAL,K);
+Kc
+U = Kc\F;
+U
+%doSolve();A
+%make_reaction();
+%make_strain_element();
+%make_stress_element();
 
 end
