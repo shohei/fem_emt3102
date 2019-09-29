@@ -1,13 +1,11 @@
 function main
 
-global NODES;global ELEMENTS,global COMPONENTS;global NODES_TRIA3;
-global DOF_NODE;global DOF_TOTAL;global DOF_TRIA3;global THICKNESS;
-global YOUNG;global POISSON;global x; global y; global connectivity;
-
-init_fem()
-
-make_D()
-make_B()
+[NODES,ELEMENTS,COMPONENTS,NODES_TRIA3,...
+    DOF_NODE,DOF_TOTAL,DOF_TRIA3,THICKNESS,...
+    YOUNG,POISSON,x,y,cnnc] = init_fem();
+D = make_D(COMPONENTS,YOUNG,POISSON);
+B = make_B(ELEMENTS,cnnc,x,y);
+B
 make_Ke()
 make_K()
 set_BC()
