@@ -13,7 +13,6 @@ F(7) = 0;F(8) = -100;F(9) = 0;F(10) = 0;F(11) = 0;F(12) = 0;
 Um(1) = true;Um(2) = true;Um(3) = false;Um(4) = false;Um(5) = false;Um(6) = false;
 Um(7) = false;Um(8) = false;Um(9) = false;Um(10) = false;Um(11) = true;Um(12) = false;
 
-%Kc = zeros(size(K));
 Kc = K;
 
 for r=1:DOF_TOTAL
