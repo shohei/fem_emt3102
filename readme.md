@@ -1,5 +1,7 @@
-# FEM simulation for 2D plain strain problem (triangular finite element)
+# FEM simulation for 2D plain strain problem
+## Triangular finite element
 ```MATLAB
+>> cd triangle
 >> main
 U2 =
 
@@ -17,4 +19,12 @@ U2 =
    -0.0011
 ```
 
-![](result.png)
+![](triangle/result.png)
+
+## Quadrilateral finite element
+
+```MATLAB
+>> cd quadrilateral
+>> main
+
+```
