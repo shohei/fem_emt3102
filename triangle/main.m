@@ -24,4 +24,4 @@ strain_element
 fprintf('[Stress for the elements]\n');
 stress_element
 fprintf('[Order comparison]\n');
-fprintf('Theory: %f, FEM: %f\n',u_theory,u_fem);
+fprintf('Theory: %.4fmm, FEM: %.4fmm\n',u_theory,u_fem);
