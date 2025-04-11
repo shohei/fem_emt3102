@@ -24,4 +24,5 @@ strain_element
 fprintf('[Stress for the elements (MPa)]\n');
 stress_element
 fprintf('[Order estimation]\n');
+fprintf('Displacement of the free edge\n');
 fprintf('Theory: %.4fmm, FEM: %.4fmm\n',u_theory,u_fem);
