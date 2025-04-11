@@ -1,4 +1,4 @@
-function postprocess(x,y,U2)
+function postprocess(x,y,U2,SCALE)
 
 plot(x,y,'bo');hold on;
 plot(x,y,'b-');
@@ -11,8 +11,8 @@ for idx=1:n/2
     uy=[uy U2(2*idx)];
 end
 
-plot(x+ux*50,y+uy*50,'ro');
-plot(x+ux*50,y+uy*50,'r-');
-title('FEM simulation of 2D problem (displacement is displayed x10)');
+plot(x+ux*SCALE,y+uy*SCALE,'ro');
+plot(x+ux*SCALE,y+uy*SCALE,'r-');
+title(sprintf('FEM simulation for 2D problem (x%d scale)',SCALE));
 
 end

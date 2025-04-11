@@ -1,4 +1,6 @@
-function [B,S] = make_B(ELEMENTS,cnnc,x,y)
+function [B,S] = make_B(ELEMENTS,COMPONENTS,DOF_TRIA3,cnnc,x,y)
+
+B = zeros(COMPONENTS,DOF_TRIA3,ELEMENTS);
 
 for e=1:ELEMENTS
  x1 = x(cnnc(e,1)); y1 = y(cnnc(e,1));
@@ -6,7 +8,7 @@ for e=1:ELEMENTS
  x3 = x(cnnc(e,3)); y3 = y(cnnc(e,3));
  S = (x1*y2-x1*y3+x2*y3-x2*y1+x3*y1-x3*y2)/2;
  coef = 1/S/2;
- 
+  
  B(1,1,e) = coef*(y2-y3);
  B(1,2,e) = 0;
  B(1,3,e) = coef*(y3-y1);
