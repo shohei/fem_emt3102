@@ -15,13 +15,13 @@ strain_element=make_strain_element(ELEMENTS,NODES_TRIA3,...
 stress_element= make_stress_element(ELEMENTS,COMPONENTS,D,strain_element);
 [u_theory,u_fem]=validate_result(YOUNG,THICKNESS,F,U2);
 %%OUTPUT OF RESULTS%%%
-fprintf('[Displacement]\n');
+fprintf('[Displacement (mm)]\n');
 U2
-fprintf('[Reaction force]\n');
+fprintf('[Reaction force (N)]\n');
 Fr
 fprintf('[Strain for the elements]\n');
 strain_element
-fprintf('[Stress for the elements]\n');
+fprintf('[Stress for the elements (MPa)]\n');
 stress_element
-fprintf('[Order comparison]\n');
+fprintf('[Order estimation]\n');
 fprintf('Theory: %.4fmm, FEM: %.4fmm\n',u_theory,u_fem);
